@@ -1,6 +1,7 @@
 class Person_slot(object):
 
     __slots__ = ('_name', '_age', '_gender')
+    # Define Person_slot only has _name, _age, _gender
 
     def __init__(self, name, age):
         self._name = name
@@ -29,8 +30,8 @@ def main2():
     person.play()
     person._gender = 'Men'
     
-    # person._is_gay = True 
-    # It will cause error
+    person._is_gay = True 
+    # It will cause error, because __slots__ = ('_name', '_age', '_gender')
     # AttributeError: 'Person_slot' object has no attribute '_is_gay'
 
 main2()
